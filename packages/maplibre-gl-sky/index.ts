@@ -65,6 +65,9 @@ const map = new Map({
 map.addControl(new NavigationControl({ visualizePitch: true }), 'top-right');
 map.addControl(new maplibregl.AttributionControl({ compact: false }), 'bottom-right');
 
+const sky = new SkyControl();
+sky.addTo(map);
+
 const timeButtons = document.getElementById('time-buttons');
 
 const autoBtn = document.createElement('button');
