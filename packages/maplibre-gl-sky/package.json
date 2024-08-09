@@ -1,55 +1,55 @@
 {
-  "name": "@watergis/maplibre-gl-sky",
-  "description": "This repository is to add sky color to maplibre-gl-js smartly",
-  "version": "0.0.0",
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/maplibre-gl-sky.es.js",
-      "require": "./dist/maplibre-gl-sky.umd.js",
-      "types": "./dist/types/index.d.ts"
-    }
-  },
-  "files": [
-    "dist",
-    "package.json"
-  ],
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "prettier --check . && eslint .",
-    "format": "prettier --write ."
-  },
-  "keywords": [
-    "maplibre",
-    "maplibre-gl-js",
-    "sky"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/watergis/maplibre-gl-sky.git"
-  },
-  "author": "Jin IGARASHI",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/watergis/maplibre-gl-sky/issues"
-  },
-  "homepage": "https://github.com/watergis/maplibre-gl-sky/tree/main/packages/maplibre-gl-sky#readme",
-  "devDependencies": {
-    "@types/suncalc": "^1.9.2",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
-    "dayjs": "^1.11.12",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "prettier": "^3.2.5",
-    "typescript": "^5.5.3",
-    "vite": "^5.4.0"
-  },
-  "dependencies": {
-    "maplibre-gl": "^4.5.1",
-    "suncalc": "^1.9.0"
-  }
+	"name": "@watergis/maplibre-gl-sky",
+	"description": "This repository is to add sky color to maplibre-gl-js smartly",
+	"version": "0.0.0",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/maplibre-gl-sky.es.js",
+			"require": "./dist/maplibre-gl-sky.umd.js",
+			"types": "./dist/types/index.d.ts"
+		}
+	},
+	"files": [
+		"dist",
+		"package.json"
+	],
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
+	},
+	"keywords": [
+		"maplibre",
+		"maplibre-gl-js",
+		"sky"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/watergis/maplibre-gl-sky.git"
+	},
+	"author": "Jin IGARASHI",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/watergis/maplibre-gl-sky/issues"
+	},
+	"homepage": "https://github.com/watergis/maplibre-gl-sky/tree/main/packages/maplibre-gl-sky#readme",
+	"devDependencies": {
+		"@types/suncalc": "^1.9.2",
+		"@typescript-eslint/eslint-plugin": "^7.1.1",
+		"@typescript-eslint/parser": "^7.1.1",
+		"dayjs": "^1.11.12",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"prettier": "^3.2.5",
+		"typescript": "^5.5.3",
+		"vite": "^5.4.0"
+	},
+	"dependencies": {
+		"maplibre-gl": "^4.5.1",
+		"suncalc": "^1.9.0"
+	}
 }

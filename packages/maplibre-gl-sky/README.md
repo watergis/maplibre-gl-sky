@@ -15,8 +15,8 @@ npm i -D @watergis/maplibre-gl-sky
 This way, it will fetch the sun calc time from map center and try to get the right color palette for sky.
 
 ```ts
-import maplibregl, { Map } from "maplibre-gl";
-import { SkyControl } from "@watergis/maplibre-gl-sky";
+import maplibregl, { Map } from 'maplibre-gl';
+import { SkyControl } from '@watergis/maplibre-gl-sky';
 
 const map = new Map();
 
@@ -29,7 +29,7 @@ sky.addToMap(map);
 ```ts
 const sky = new SkyControl();
 sky.addToMap(map, {
-  timeType: "sunset",
+	timeType: 'sunset'
 });
 ```
 
@@ -38,14 +38,14 @@ sky.addToMap(map, {
 ```ts
 const sky = new SkyControl();
 sky.addToMap(map, {
-  date: new Date(),
+	date: new Date()
 });
 ```
 
 - Customise sky colors
 
 ```ts
-import { defaultSkyOptions, SkyControl } from "@watergis/maplibre-gl-sky";
+import { defaultSkyOptions, SkyControl } from '@watergis/maplibre-gl-sky';
 
 const newOptions = defaultSkyOptions;
 // edit your options for `newOptions`

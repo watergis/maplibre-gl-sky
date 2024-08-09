@@ -1,7 +1,7 @@
-import { TimeType } from "./timeTypes";
+import { TimeType } from './timeTypes';
 
 export interface AddToOptions {
-  timeType?: TimeType;
-  date?: Date;
-  location?: number[];
+	timeType?: TimeType;
+	date?: Date;
+	location?: number[];
 }
