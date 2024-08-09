@@ -21,14 +21,14 @@ import { SkyControl } from '@watergis/maplibre-gl-sky';
 const map = new Map();
 
 const sky = new SkyControl();
-sky.addToMap(map);
+sky.addTo(map);
 ```
 
 - add specific sky color
 
 ```ts
 const sky = new SkyControl();
-sky.addToMap(map, {
+sky.addTo(map, {
 	timeType: 'sunset'
 });
 ```
@@ -37,7 +37,7 @@ sky.addToMap(map, {
 
 ```ts
 const sky = new SkyControl();
-sky.addToMap(map, {
+sky.addTo(map, {
 	date: new Date()
 });
 ```
@@ -51,7 +51,7 @@ const newOptions = defaultSkyOptions;
 // edit your options for `newOptions`
 
 const sky = new SkyControl(newOptions);
-sky.addToMap(map);
+sky.addTo(map);
 ```
 
 ## License

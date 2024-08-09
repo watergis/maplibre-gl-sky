@@ -1,4 +1,4 @@
-import { Options } from './interfaces';
+import { Options } from '../interfaces';
 
 export const defaultSkyOptions: Options = {
 	skyOptions: {
