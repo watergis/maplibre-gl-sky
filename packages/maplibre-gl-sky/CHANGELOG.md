@@ -1,5 +1,11 @@
 # @watergis/maplibre-gl-sky
 
+## 0.0.3
+
+### Patch Changes
+
+- 44d43cc: fix: improved algorithm to get the correct time's sky definition. update sky when move map if location is not specified.
+
 ## 0.0.2
 
 ### Patch Changes
