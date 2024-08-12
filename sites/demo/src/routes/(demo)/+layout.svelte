@@ -1,7 +1,5 @@
 <script lang="ts">
 	import '../../app.postcss';
-	import { onMount, setContext } from 'svelte';
-	import { page } from '$app/stores';
 </script>
 
 <svelte:head>
