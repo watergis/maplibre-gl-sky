@@ -26,10 +26,15 @@
 
 		map.addControl(new NavigationControl({ visualizePitch: true }), 'top-right');
 		map.addControl(new AttributionControl({ compact: false }), 'bottom-right');
-		map.addControl(new GeolocateControl({positionOptions: {
-                enableHighAccuracy: true
-            },
-            trackUserLocation: true}), 'top-right')
+		map.addControl(
+			new GeolocateControl({
+				positionOptions: {
+					enableHighAccuracy: true
+				},
+				trackUserLocation: true
+			}),
+			'top-right'
+		);
 
 		initSky();
 	});
