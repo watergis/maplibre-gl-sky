@@ -2,10 +2,6 @@ import type { StyleSpecification } from 'maplibre-gl';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async () => {
-	const title = 'Maplibre GL Sky';
-	const site_name = 'Maplibre GL Sky Demo';
-	const site_description = 'Demo website for maplibre-gl-sky plugin';
-
 	const style: StyleSpecification = {
 		version: 8,
 		center: [138.76574, 35.20046],
@@ -59,12 +55,6 @@ export const load: PageLoad = async () => {
 	};
 
 	return {
-		title,
-		site_name,
-		site_description,
 		style
 	};
 };
-
-export const prerender = true;
-export const ssr = false;

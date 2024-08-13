@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '../../app.postcss';
 	import { AppShell, AppBar, LightSwitch } from '@skeletonlabs/skeleton';
 	import { autoModeWatcher } from '@skeletonlabs/skeleton';
 
@@ -26,10 +25,7 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
-	import type { PageData } from './$types';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
-
-	export let data: PageData;
 
 	let title = 'Maplibre GL Sky';
 
@@ -45,18 +41,6 @@
 		autoModeWatcher();
 	});
 </script>
-
-<svelte:head>
-	<title>{data.title}</title>
-	<meta property="og:site_name" content={data.site_name} />
-	<meta property="og:type" content="article" />
-	<meta name="description" content={data.site_description} />
-	<meta property="og:description" content={data.site_description} />
-	<meta name="twitter:description" content={data.site_description} />
-	<meta property="og:title" content={data.title} />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content={data.title} />
-</svelte:head>
 
 <!-- App Shell -->
 <AppShell>
