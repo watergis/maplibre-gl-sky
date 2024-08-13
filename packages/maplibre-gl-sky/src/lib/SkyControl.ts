@@ -1,22 +1,44 @@
 import { Map, SkySpecification } from 'maplibre-gl';
 import SunCalc from 'suncalc';
-import { AddToOptions, AvailableTimeTypes, Options, SkyTimeType, TimeType } from './interfaces';
+import { AddToOptions, AvailableTimeTypes, Options, TimeType } from './interfaces';
 import { defaultSkyOptions } from './constants';
-import dayjs from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 
+/**
+ * SkyControl class
+ */
 export class SkyControl {
 	private map?: Map;
 
 	private options: Options = defaultSkyOptions;
 
+	/**
+	 * Constructor
+	 * @param options Options object
+	 */
 	constructor(options?: Options) {
 		if (options) {
 			this.options = Object.assign(this.options, options);
 		}
 	}
 
+	/**
+	 * Update options in the control object
+	 * @param options Options object
+	 */
+	public setOptions(options: Options) {
+		this.options = options;
+	}
+
+	/**
+	 * Add sky color to maplibre map object.
+	 * If options are not specified, try to find better sky color based on map center and time.
+	 * @param map Maplibre map object
+	 * @param options AddToOptions object
+	 * @returns void
+	 */
 	public addTo(map: Map, options?: AddToOptions) {
 		this.map = map;
 		this.map.setMaxPitch(this.options.maxPitch);
@@ -41,6 +63,11 @@ export class SkyControl {
 		}
 	}
 
+	/**
+	 * get maplibre SkySpecification object according to parameters
+	 * @param options AddToOptions object
+	 * @returns SkySpecification object
+	 */
 	private getSky(options?: AddToOptions) {
 		if (!this.map) return;
 		const skyOptions = this.options.skyOptions;
@@ -65,6 +92,13 @@ export class SkyControl {
 		return currentSky;
 	}
 
+	/**
+	 * Get SkySpecification according to longitude/latitude.
+	 * @param lng Longitude
+	 * @param lat Latitude
+	 * @param date Date (optional)
+	 * @returns SkySpecification object
+	 */
 	private getSkySpecByTime(lng: number, lat: number, date?: Date) {
 		const skyOptions = this.options.skyOptions;
 		if (!skyOptions) return;
@@ -95,8 +129,16 @@ export class SkyControl {
 			(a, b) => a.date.toDate().getTime() - b.date.toDate().getTime()
 		);
 
-		let beforeTime: SkyTimeType = {};
-		let afterTime: SkyTimeType = {};
+		let beforeTime: {
+			type?: TimeType;
+			date?: Dayjs;
+			sky?: SkySpecification;
+		} = {};
+		let afterTime: {
+			type?: TimeType;
+			date?: Dayjs;
+			sky?: SkySpecification;
+		} = {};
 
 		availableTImes.forEach((time) => {
 			const targetTime = time.date;
