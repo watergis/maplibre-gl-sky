@@ -1,3 +1,6 @@
+/**
+ * The list of available suncalc time type names
+ */
 export const AvailableTimeTypes = [
 	'sunrise',
 	'sunriseEnd',
@@ -15,4 +18,7 @@ export const AvailableTimeTypes = [
 	'dawn'
 ] as const;
 
+/**
+ * Available time type interface
+ */
 export type TimeType = (typeof AvailableTimeTypes)[number];
