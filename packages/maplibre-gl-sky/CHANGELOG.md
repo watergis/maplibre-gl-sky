@@ -1,5 +1,11 @@
 # @watergis/maplibre-gl-sky
 
+## 0.0.4
+
+### Patch Changes
+
+- 48ee756: fix: added setOptions method in SkyControl. refactored codes.
+
 ## 0.0.3
 
 ### Patch Changes
