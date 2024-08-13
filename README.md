@@ -6,6 +6,8 @@
 
 This monorepo manages the source code for `@watergis/maplibre-gl-sky`.
 
+![plugin-image](./sites/demo/static/assets/plugin-overview.webp)
+
 ## Repositories
 
 | repository | version | description | changelog |

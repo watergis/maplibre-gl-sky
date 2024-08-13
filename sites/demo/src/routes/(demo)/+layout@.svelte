@@ -1,7 +1,3 @@
-<script lang="ts">
-	import '../../app.postcss';
-</script>
-
 <svelte:head>
 	<link
 		rel="stylesheet"
