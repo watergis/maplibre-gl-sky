@@ -1,5 +1,11 @@
 # @watergis/maplibre-gl-sky
 
+## 0.0.5
+
+### Patch Changes
+
+- 0ad6fcb: refactor: refactored logic, and export some functions to be used from demo website
+
 ## 0.0.4
 
 ### Patch Changes
