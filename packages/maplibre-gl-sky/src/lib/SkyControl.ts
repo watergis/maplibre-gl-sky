@@ -88,92 +88,104 @@ export class SkyControl {
 			const center = this.map.getCenter();
 			location = [center.lng, center.lat];
 		}
-		const currentSky = this.getSkySpecByTime(location[0], location[1], options?.date);
-		return currentSky;
+
+		// convert to UTC
+		let currentDate: dayjs.Dayjs;
+		if (!options?.date) {
+			currentDate = dayjs.utc();
+		} else {
+			currentDate = dayjs(options?.date).utc();
+		}
+
+		const activeTimeName = this.getBestTimeNameByLocation(
+			location[0],
+			location[1],
+			currentDate.toDate()
+		);
+		const activeSky: SkySpecification = skyOptions[activeTimeName] as SkySpecification;
+		return activeSky;
 	}
 
 	/**
-	 * Get SkySpecification according to longitude/latitude.
+	 * get suncalc times by location and date
 	 * @param lng Longitude
 	 * @param lat Latitude
-	 * @param date Date (optional)
-	 * @returns SkySpecification object
+	 * @param date Date object
+	 * @param addBuffer Default is false. If ture, add yesterday and tomorrow's times
+	 * @returns
 	 */
-	private getSkySpecByTime(lng: number, lat: number, date?: Date) {
-		const skyOptions = this.options.skyOptions;
-		if (!skyOptions) return;
-		// convert to UTC
-		let currentDate: dayjs.Dayjs;
-		if (!date) {
-			currentDate = dayjs.utc();
-		} else {
-			currentDate = dayjs(date).utc();
-		}
-		const times = SunCalc.getTimes(currentDate.toDate(), lat, lng);
+	public getTimesByLocation(lng: number, lat: number, date: Date, addBuffer = false) {
+		const times = SunCalc.getTimes(date, lat, lng);
 
 		// add 1 day before and 1 day after
-		const timesBefore: { type: TimeType; date: dayjs.Dayjs }[] = [];
-		const timesToday: { type: TimeType; date: dayjs.Dayjs }[] = [];
-		const timesAfter: { type: TimeType; date: dayjs.Dayjs }[] = [];
+		const timesBefore: { type: TimeType; date: Date }[] = [];
+		const timesToday: { type: TimeType; date: Date }[] = [];
+		const timesAfter: { type: TimeType; date: Date }[] = [];
 		AvailableTimeTypes.forEach((timeType) => {
 			const targetTime = dayjs(times[timeType]).utc();
-			timesToday.push({ type: timeType, date: targetTime });
-			const before = targetTime.add(-1, 'day');
-			timesBefore.push({ type: timeType, date: before });
+			timesToday.push({ type: timeType, date: targetTime.toDate() });
 
-			const after = targetTime.add(1, 'day');
-			timesAfter.push({ type: timeType, date: after });
+			if (addBuffer) {
+				const before = targetTime.add(-1, 'day');
+				timesBefore.push({ type: timeType, date: before.toDate() });
+
+				const after = targetTime.add(1, 'day');
+				timesAfter.push({ type: timeType, date: after.toDate() });
+			}
 		});
 		let availableTImes = [...timesBefore, ...timesToday, ...timesAfter];
-		availableTImes = availableTImes.sort(
-			(a, b) => a.date.toDate().getTime() - b.date.toDate().getTime()
-		);
+		availableTImes = availableTImes.sort((a, b) => a.date.getTime() - b.date.getTime());
+
+		return availableTImes;
+	}
+
+	/**
+	 * Get the best time name by using suncalc library based on given location and date
+	 * @param lng Longitude
+	 * @param lat Latitude
+	 * @param date Date
+	 * @returns active suncalc time name
+	 */
+	public getBestTimeNameByLocation(lng: number, lat: number, date: Date) {
+		const availableTImes = this.getTimesByLocation(lng, lat, date, true);
 
 		let beforeTime: {
 			type?: TimeType;
 			date?: Dayjs;
-			sky?: SkySpecification;
 		} = {};
 		let afterTime: {
 			type?: TimeType;
 			date?: Dayjs;
-			sky?: SkySpecification;
 		} = {};
 
 		availableTImes.forEach((time) => {
-			const targetTime = time.date;
+			const targetTime = dayjs(time.date);
 			const timeType = time.type;
 			// console.log(timeType, targetTime.toISOString(), currentDate.toISOString())
 
-			if (targetTime.isBefore(currentDate)) {
-				const sky = skyOptions[timeType] as SkySpecification;
-				if (!beforeTime.sky) {
+			if (dayjs(targetTime).isBefore(date)) {
+				if (!beforeTime.type) {
 					beforeTime = {
 						type: timeType,
-						date: targetTime,
-						sky: sky
+						date: targetTime
 					};
-				} else if (targetTime.isAfter(beforeTime.date)) {
+				} else if (dayjs(targetTime).isAfter(beforeTime.date)) {
 					beforeTime = {
 						type: timeType,
-						date: targetTime,
-						sky: sky
+						date: targetTime
 					};
 				}
 			}
-			if (targetTime.isAfter(currentDate)) {
-				const sky = skyOptions[timeType] as SkySpecification;
-				if (!afterTime.sky) {
+			if (dayjs(targetTime).isAfter(date)) {
+				if (!afterTime.type) {
 					afterTime = {
 						type: timeType,
-						date: targetTime,
-						sky: sky
+						date: targetTime
 					};
-				} else if (targetTime.isBefore(afterTime.date)) {
+				} else if (dayjs(targetTime).isBefore(afterTime.date)) {
 					afterTime = {
 						type: timeType,
-						date: targetTime,
-						sky: sky
+						date: targetTime
 					};
 				}
 			}
@@ -181,28 +193,23 @@ export class SkyControl {
 
 		// console.log(beforeTime, afterTime);
 
-		const beforeDiff = beforeTime.date
-			? currentDate.toDate().getTime() - beforeTime.date.toDate().getTime()
-			: -1;
-		const afterDiff = afterTime.date
-			? afterTime.date.toDate().getTime() - currentDate.toDate().getTime()
-			: -1;
+		const beforeDiff = beforeTime.date ? date.getTime() - beforeTime.date.toDate().getTime() : -1;
+		const afterDiff = afterTime.date ? afterTime.date.toDate().getTime() - date.getTime() : -1;
 
-		let activeTime: SkySpecification;
+		let activeTime: TimeType;
 		if (beforeDiff > -1 && afterDiff > -1) {
 			if (afterDiff > beforeDiff) {
-				activeTime = afterTime.sky as SkySpecification;
+				activeTime = afterTime.type as TimeType;
 			} else {
-				activeTime = beforeTime.sky as SkySpecification;
+				activeTime = beforeTime.type as TimeType;
 			}
 		} else if (beforeTime && !afterTime) {
-			activeTime = beforeTime.sky as SkySpecification;
+			activeTime = beforeTime.type as TimeType;
 		} else if (afterTime && !beforeTime) {
-			activeTime = afterTime.sky as SkySpecification;
+			activeTime = afterTime.type as TimeType;
 		} else {
-			activeTime = skyOptions.solarNoon;
+			activeTime = 'solarNoon';
 		}
-
 		return activeTime;
 	}
 }

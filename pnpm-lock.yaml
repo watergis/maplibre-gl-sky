@@ -91,6 +91,9 @@ importers:
       '@types/node':
         specifier: 22.2.0
         version: 22.2.0
+      '@watergis/maplibre-center-icon':
+        specifier: ^3.0.0
+        version: 3.0.0(svelte@4.2.18)
       '@watergis/maplibre-gl-sky':
         specifier: workspace:^
         version: link:../../packages/maplibre-gl-sky
@@ -130,6 +133,9 @@ importers:
       svelte-check:
         specifier: ^3.6.0
         version: 3.8.5(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(svelte@4.2.18)
+      svelte-vertical-timeline:
+        specifier: ^1.0.2
+        version: 1.0.2(svelte@4.2.18)
       tailwindcss:
         specifier: 3.4.9
         version: 3.4.9
@@ -784,6 +790,11 @@ packages:
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+
+  '@watergis/maplibre-center-icon@3.0.0':
+    resolution: {integrity: sha512-eG3LfPY6xRorWbR89hAzz4MA/reZ2xJzkaNJQQtjwAjevt04QX9FL/3cHwwzxawdQBNC9lG7f18G+3BSVVD9Qw==}
+    peerDependencies:
+      svelte: ^4.0.0
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2563,6 +2574,11 @@ packages:
       typescript:
         optional: true
 
+  svelte-vertical-timeline@1.0.2:
+    resolution: {integrity: sha512-PAB+qBrSrNp5/saLXwIJ9r9dljdbiDB8ymc7c6ieIdbbP+71j7N+qUdZP1In+KXUbyXMpsG2I13KCgLalf6kOA==}
+    peerDependencies:
+      svelte: ^4.2.16
+
   svelte@4.2.18:
     resolution: {integrity: sha512-d0FdzYIiAePqRJEb90WlJDkjUEx42xhivxN8muUBmfZnP+tzUgz12DJ2hRJi8sIHCME7jeK1PTMgKPSfTd8JrA==}
     engines: {node: '>=16'}
@@ -3526,6 +3542,11 @@ snapshots:
       eslint-visitor-keys: 3.4.3
 
   '@ungap/structured-clone@1.2.0': {}
+
+  '@watergis/maplibre-center-icon@3.0.0(svelte@4.2.18)':
+    dependencies:
+      maplibre-gl: 4.5.2
+      svelte: 4.2.18
 
   acorn-jsx@5.3.2(acorn@8.12.1):
     dependencies:
@@ -5388,6 +5409,10 @@ snapshots:
       postcss: 8.4.41
       postcss-load-config: 4.0.2(postcss@8.4.41)
       typescript: 5.5.4
+
+  svelte-vertical-timeline@1.0.2(svelte@4.2.18):
+    dependencies:
+      svelte: 4.2.18
 
   svelte@4.2.18:
     dependencies:

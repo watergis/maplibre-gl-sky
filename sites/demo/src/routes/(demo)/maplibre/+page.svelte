@@ -18,6 +18,16 @@
 		type TimeType
 	} from '@watergis/maplibre-gl-sky';
 	import { clipboard, RangeSlider } from '@skeletonlabs/skeleton';
+	import {
+		Timeline,
+		TimelineItem,
+		TimelineSeparator,
+		TimelineDot,
+		TimelineConnector,
+		TimelineContent,
+		TimelineOppositeContent
+	} from 'svelte-vertical-timeline';
+	import CenterIconManager from '@watergis/maplibre-center-icon';
 
 	export let data: PageData;
 
@@ -25,6 +35,13 @@
 	let activeTime: TimeType | 'auto' = 'auto';
 	const defaultOptions: Options = defaultSkyOptions;
 	let activeSkySpec: SkySpecification;
+
+	let suncalcTimes: {
+		type: TimeType;
+		date: Date;
+	}[] = [];
+	let bestTime: TimeType;
+	let currentDate: Date;
 
 	onMount(() => {
 		map = new Map({
@@ -47,8 +64,24 @@
 			'top-right'
 		);
 
-		initSky();
+		const centerIconManager = new CenterIconManager(map);
+		centerIconManager.create();
+
+		map.once('load', () => {
+			initSky();
+			updateSuncalcTimes();
+
+			map.on('moveend', updateSuncalcTimes);
+		});
 	});
+
+	const updateSuncalcTimes = () => {
+		const center = map.getCenter();
+		const sky = new SkyControl(defaultOptions);
+		currentDate = new Date();
+		suncalcTimes = sky.getTimesByLocation(center.lng, center.lat, currentDate);
+		bestTime = sky.getBestTimeNameByLocation(center.lng, center.lat, currentDate);
+	};
 
 	const initSky = (type?: TimeType) => {
 		if (!map) return;
@@ -101,6 +134,31 @@
 			</label>
 		</div>
 	{/if}
+{/if}
+
+{#if bestTime && suncalcTimes?.length > 0}
+	<div class="suncalc-overlay p-2">
+		<p class="text-black text-right my-2">Current time: {currentDate.toISOString()}</p>
+		<Timeline position="left">
+			{#each suncalcTimes as time}
+				{@const color =
+					time.type.toLowerCase() === bestTime.toLowerCase() ? 'rgb(255,0,0)' : 'rgb(0,0,0)'}
+
+				<TimelineItem>
+					<TimelineOppositeContent slot="opposite-content">
+						<p style="color: {color};">{time.date.toISOString()}</p>
+					</TimelineOppositeContent>
+					<TimelineSeparator>
+						<TimelineDot style="background-color: {color};" />
+						<TimelineConnector />
+					</TimelineSeparator>
+					<TimelineContent>
+						<p style="color: {color};">{time.type}</p>
+					</TimelineContent>
+				</TimelineItem>
+			{/each}
+		</Timeline>
+	</div>
 {/if}
 
 <div class="control-overlay p-2 gap-0.5">
@@ -246,5 +304,17 @@
 		.sky-spec-text {
 			width: 280px;
 		}
+	}
+
+	.suncalc-overlay {
+		position: absolute;
+		top: 20px;
+		left: 10px;
+		z-index: 10;
+
+		max-height: 300px;
+		overflow-y: auto;
+
+		background-color: rgba(255, 255, 255, 0.7);
 	}
 </style>
