@@ -67,13 +67,12 @@
 		const centerIconManager = new CenterIconManager(map);
 		centerIconManager.create();
 
-
-		map.once('load', ()=>{
+		map.once('load', () => {
 			initSky();
 			updateSuncalcTimes();
 
 			map.on('moveend', updateSuncalcTimes);
-		})
+		});
 	});
 
 	const updateSuncalcTimes = () => {
