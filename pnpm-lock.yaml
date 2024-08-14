@@ -130,6 +130,9 @@ importers:
       svelte-check:
         specifier: ^3.6.0
         version: 3.8.5(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(svelte@4.2.18)
+      svelte-vertical-timeline:
+        specifier: ^1.0.2
+        version: 1.0.2(svelte@4.2.18)
       tailwindcss:
         specifier: 3.4.9
         version: 3.4.9
@@ -2562,6 +2565,11 @@ packages:
         optional: true
       typescript:
         optional: true
+
+  svelte-vertical-timeline@1.0.2:
+    resolution: {integrity: sha512-PAB+qBrSrNp5/saLXwIJ9r9dljdbiDB8ymc7c6ieIdbbP+71j7N+qUdZP1In+KXUbyXMpsG2I13KCgLalf6kOA==}
+    peerDependencies:
+      svelte: ^4.2.16
 
   svelte@4.2.18:
     resolution: {integrity: sha512-d0FdzYIiAePqRJEb90WlJDkjUEx42xhivxN8muUBmfZnP+tzUgz12DJ2hRJi8sIHCME7jeK1PTMgKPSfTd8JrA==}
@@ -5388,6 +5396,10 @@ snapshots:
       postcss: 8.4.41
       postcss-load-config: 4.0.2(postcss@8.4.41)
       typescript: 5.5.4
+
+  svelte-vertical-timeline@1.0.2(svelte@4.2.18):
+    dependencies:
+      svelte: 4.2.18
 
   svelte@4.2.18:
     dependencies:
