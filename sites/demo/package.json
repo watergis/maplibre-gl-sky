@@ -21,6 +21,7 @@
 		"@tailwindcss/typography": "0.5.14",
 		"@types/eslint": "^9.6.0",
 		"@types/node": "22.2.0",
+		"@watergis/maplibre-center-icon": "^3.0.0",
 		"@watergis/maplibre-gl-sky": "workspace:^",
 		"autoprefixer": "10.4.20",
 		"eslint": "^9.0.0",

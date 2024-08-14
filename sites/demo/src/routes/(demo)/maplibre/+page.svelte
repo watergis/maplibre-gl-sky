@@ -27,6 +27,7 @@
 		TimelineContent,
 		TimelineOppositeContent
 	} from 'svelte-vertical-timeline';
+	import CenterIconManager from '@watergis/maplibre-center-icon';
 
 	export let data: PageData;
 
@@ -62,6 +63,9 @@
 			}),
 			'top-right'
 		);
+
+		const centerIconManager = new CenterIconManager(map);
+		centerIconManager.create();
 
 		map.on('moveend', updateSuncalcTimes);
 		updateSuncalcTimes();
