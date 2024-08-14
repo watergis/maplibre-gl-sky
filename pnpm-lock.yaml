@@ -96,7 +96,7 @@ importers:
         version: 3.0.0(svelte@4.2.18)
       '@watergis/maplibre-gl-sky':
         specifier: workspace:^
-        version: link:../..
+        version: link:../../packages/maplibre-gl-sky
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.41)
