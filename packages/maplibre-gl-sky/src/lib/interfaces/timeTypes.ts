@@ -15,7 +15,8 @@ export const AvailableTimeTypes = [
 	'nadir',
 	'nightEnd',
 	'nauticalDawn',
-	'dawn'
+	'dawn',
+	'blueSky'
 ] as const;
 
 /**
