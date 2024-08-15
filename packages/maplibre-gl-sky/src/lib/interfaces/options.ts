@@ -64,10 +64,6 @@ export interface Options {
 		 * dawn (morning nautical twilight ends, morning civil twilight starts)
 		 */
 		dawn?: SkySpecification;
-		/**
-		 * blueSky (daytime, clear sunny blue sky without a cloud)
-		 */
-		blueSky?: SkySpecification;
 	};
 	/**
 	 * MaxPitch of Maplibre. Default is 85.
