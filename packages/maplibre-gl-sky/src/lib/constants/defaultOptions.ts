@@ -32,13 +32,13 @@ export const defaultSkyOptions: Options = {
 
 		// default (clear blue sky)
 		solarNoon: {
-			"sky-color": "#199EF3",
-        	"sky-horizon-blend": 0.7,
-        	"horizon-color": "#f0f8ff",
-        	"horizon-fog-blend": 0.8,
-        	"fog-color": "#2c7fb8",
-        	"fog-ground-blend": 0.9,
-			"atmosphere-blend": ["interpolate",["linear"],["zoom"],0,1,12,0]
+			'sky-color': '#199EF3',
+			'sky-horizon-blend': 0.7,
+			'horizon-color': '#f0f8ff',
+			'horizon-fog-blend': 0.8,
+			'fog-color': '#2c7fb8',
+			'fog-ground-blend': 0.9,
+			'atmosphere-blend': ['interpolate', ['linear'], ['zoom'], 0, 1, 12, 0]
 		},
 
 		// https://www.color-hex.com/color-palette/92854
