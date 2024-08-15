@@ -1,5 +1,11 @@
 # @watergis/maplibre-gl-sky
 
+## 0.0.6
+
+### Patch Changes
+
+- bb6fc10: add the new color-setting and replace it to the default
+
 ## 0.0.5
 
 ### Patch Changes
