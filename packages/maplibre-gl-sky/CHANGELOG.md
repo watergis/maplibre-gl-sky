@@ -1,5 +1,12 @@
 # @watergis/maplibre-gl-sky
 
+## 0.0.7
+
+### Patch Changes
+
+- 988e7fc: chore: updated dependencies
+- 045308d: fix: maplibre-gl-js reset sky spec when style is changed. Listening styledata event to update sky spec automatically.
+
 ## 0.0.6
 
 ### Patch Changes
