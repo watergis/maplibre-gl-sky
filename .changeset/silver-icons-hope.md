@@ -2,4 +2,4 @@
 "@watergis/maplibre-gl-sky": patch
 ---
 
-fix: update sky spec when style is changed in maplibre-gl
+fix: maplibre-gl-js reset sky spec when style is changed. Listening styledata event to update sky spec automatically.
