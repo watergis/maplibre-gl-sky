@@ -36,7 +36,7 @@
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"svelte-vertical-timeline": "^1.0.2",
-		"tailwindcss": "3.4.9",
+		"tailwindcss": "3.4.10",
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.0.0",
 		"vite": "^5.0.3",
