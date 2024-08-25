@@ -22,7 +22,6 @@
 		"@types/eslint": "^9.6.0",
 		"@types/node": "22.5.0",
 		"@watergis/maplibre-center-icon": "^3.0.1",
-		"@watergis/maplibre-gl-sky": "workspace:^",
 		"autoprefixer": "10.4.20",
 		"eslint": "^9.9.1",
 		"eslint-config-prettier": "^9.1.0",
@@ -45,6 +44,7 @@
 	"type": "module",
 	"dependencies": {
 		"@floating-ui/dom": "1.6.10",
+		"@watergis/maplibre-gl-sky": "workspace:^",
 		"highlight.js": "11.10.0"
 	}
 }

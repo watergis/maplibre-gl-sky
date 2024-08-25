@@ -43,6 +43,8 @@
 	let bestTime: TimeType;
 	let currentDate: Date;
 
+	let sky: SkyControl
+
 	onMount(() => {
 		map = new Map({
 			container: 'map',
@@ -77,7 +79,9 @@
 
 	const updateSuncalcTimes = () => {
 		const center = map.getCenter();
-		const sky = new SkyControl(defaultOptions);
+		if (!sky) {
+			sky = new SkyControl(defaultOptions);
+		}
 		currentDate = new Date();
 		suncalcTimes = sky.getTimesByLocation(center.lng, center.lat, currentDate);
 		bestTime = sky.getBestTimeNameByLocation(center.lng, center.lat, currentDate);
@@ -85,7 +89,9 @@
 
 	const initSky = (type?: TimeType) => {
 		if (!map) return;
-		const sky = new SkyControl(defaultOptions);
+		if (!sky) {
+			sky = new SkyControl(defaultOptions);
+		}
 
 		let options: AddToOptions = {};
 		if (type) {

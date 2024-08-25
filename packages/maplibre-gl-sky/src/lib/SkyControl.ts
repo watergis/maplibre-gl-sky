@@ -14,6 +14,8 @@ export class SkyControl {
 
 	private options: Options = defaultSkyOptions;
 
+	private addToOptions?: AddToOptions
+
 	/**
 	 * Constructor
 	 * @param options Options object
@@ -41,26 +43,33 @@ export class SkyControl {
 	 */
 	public addTo(map: Map, options?: AddToOptions) {
 		this.map = map;
+		this.addToOptions = options;
 		this.map.setMaxPitch(this.options.maxPitch);
 
-		const currentSky = this.getSky(options);
-		if (!currentSky) return;
-
 		if (this.map.isStyleLoaded()) {
-			this.map.setSky(currentSky);
+			this.updateSky()
 		} else {
 			this.map.once('load', () => {
-				this.map?.setSky(currentSky);
+				this.updateSky()
 			});
 		}
 
 		if (!options?.location) {
 			this.map.on('moveend', () => {
-				const currentSky = this.getSky(options);
-				if (!currentSky) return;
-				this.map?.setSky(currentSky);
+				this.updateSky()
 			});
 		}
+
+		// register updateSky event on styledata, so sky can be updated when style is changed.
+		this.map.off('styledata', this.updateSky.bind(this))
+		this.map.on('styledata', this.updateSky.bind(this))
+	}
+
+	private updateSky() {
+		if (!this.map) return
+		const currentSky = this.getSky(this.addToOptions);
+		if (!currentSky) return
+		this.map?.setSky(currentSky);
 	}
 
 	/**
