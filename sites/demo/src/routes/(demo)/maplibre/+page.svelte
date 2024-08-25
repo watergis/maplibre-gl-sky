@@ -43,7 +43,7 @@
 	let bestTime: TimeType;
 	let currentDate: Date;
 
-	let sky: SkyControl
+	let sky: SkyControl;
 
 	onMount(() => {
 		map = new Map({
