@@ -38,18 +38,19 @@
 	"homepage": "https://github.com/watergis/maplibre-gl-sky/tree/main/packages/maplibre-gl-sky#readme",
 	"devDependencies": {
 		"@types/suncalc": "^1.9.2",
-		"@typescript-eslint/eslint-plugin": "^8.0.0",
-		"@typescript-eslint/parser": "^8.0.0",
-		"dayjs": "^1.11.12",
-		"eslint": "^8.57.0",
+		"@typescript-eslint/eslint-plugin": "^8.2.0",
+		"@typescript-eslint/parser": "^8.2.0",
+		"dayjs": "^1.11.13",
+		"eslint": "^9.9.1",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-import": "^2.29.1",
-		"prettier": "^3.2.5",
-		"typescript": "^5.5.3",
-		"vite": "^5.4.0"
+		"globals": "^15.0.0",
+		"prettier": "^3.3.3",
+		"typescript": "^5.5.4",
+		"vite": "^5.4.2"
 	},
 	"dependencies": {
-		"maplibre-gl": "^4.5.1",
+		"maplibre-gl": "^4.6.0",
 		"suncalc": "^1.9.0"
 	}
 }
