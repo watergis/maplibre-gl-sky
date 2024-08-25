@@ -1,7 +1,7 @@
 import type { StyleSpecification } from 'maplibre-gl';
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 
-export const load: PageLoad = async () => {
+export const load: PageServerLoad = async () => {
 	const style: StyleSpecification = {
 		version: 8,
 		center: [138.76574, 35.20046],

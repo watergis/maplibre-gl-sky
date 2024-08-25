@@ -15,6 +15,7 @@
 		"@skeletonlabs/skeleton": "2.10.2",
 		"@skeletonlabs/tw-plugin": "0.4.0",
 		"@sveltejs/adapter-auto": "^3.2.4",
+		"@sveltejs/adapter-netlify": "^4.3.3",
 		"@sveltejs/kit": "^2.5.24",
 		"@sveltejs/vite-plugin-svelte": "^3.1.2",
 		"@tailwindcss/forms": "0.5.7",

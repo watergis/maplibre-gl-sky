@@ -1,6 +1,6 @@
-import type { LayoutLoad } from './$types';
+import type { LayoutServerLoad } from './$types';
 
-export const load: LayoutLoad = async ({ url }) => {
+export const load: LayoutServerLoad = async ({ url }) => {
 	const title = 'Maplibre GL Sky';
 	const site_name = 'Maplibre GL Sky Demo';
 	const site_description = 'Demo website for maplibre-gl-sky plugin';
@@ -13,6 +13,3 @@ export const load: LayoutLoad = async ({ url }) => {
 		socialImage
 	};
 };
-
-export const prerender = true;
-export const ssr = false;
