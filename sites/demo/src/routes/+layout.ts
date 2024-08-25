@@ -13,6 +13,3 @@ export const load: LayoutLoad = async ({ url }) => {
 		socialImage
 	};
 };
-
-export const prerender = true;
-export const ssr = false;
