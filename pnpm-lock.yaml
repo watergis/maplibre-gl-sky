@@ -63,9 +63,6 @@ importers:
       '@floating-ui/dom':
         specifier: 1.6.10
         version: 1.6.10
-      '@watergis/maplibre-gl-sky':
-        specifier: workspace:^
-        version: link:../..
       highlight.js:
         specifier: 11.10.0
         version: 11.10.0
@@ -100,6 +97,9 @@ importers:
       '@watergis/maplibre-center-icon':
         specifier: ^3.0.1
         version: 3.0.1(svelte@4.2.19)
+      '@watergis/maplibre-gl-sky':
+        specifier: workspace:^
+        version: link:../../packages/maplibre-gl-sky
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.41)
