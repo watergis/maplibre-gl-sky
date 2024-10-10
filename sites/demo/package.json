@@ -20,7 +20,7 @@
 		"@tailwindcss/forms": "0.5.7",
 		"@tailwindcss/typography": "0.5.14",
 		"@types/eslint": "^9.6.0",
-		"@types/node": "22.5.0",
+		"@types/node": "22.7.5",
 		"@watergis/maplibre-center-icon": "^3.0.1",
 		"@watergis/maplibre-gl-sky": "workspace:^",
 		"autoprefixer": "10.4.20",
