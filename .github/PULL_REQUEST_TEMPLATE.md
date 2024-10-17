@@ -11,7 +11,9 @@ Select a plugin related to this PR.
 - [ ] maplibre-gl-sky
 
 ## Type of Pull Request
+
 <!-- ignore-task-list-start -->
+
 - [ ] Adding a feature
 - [ ] Fixing a bug
 - [ ] Maintaining documents
@@ -19,7 +21,9 @@ Select a plugin related to this PR.
 <!-- ignore-task-list-end -->
 
 ## Verify the followings
+
 <!-- ignore-task-list-start -->
+
 - [ ] Code is up-to-date with the `main` branch
 - [ ] No lint errors after `pnpm lint`
 - [ ] Make sure all the exsiting features working well

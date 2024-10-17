@@ -12,7 +12,7 @@
 	import typescript from 'highlight.js/lib/languages/typescript';
 	import shell from 'highlight.js/lib/languages/shell';
 	import { initializeStores, Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
-	import Navigation from '$lib/Navigation.svelte';
+	import Navigation from './Navigation.svelte';
 
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);

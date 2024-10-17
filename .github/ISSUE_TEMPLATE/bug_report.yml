@@ -1,6 +1,6 @@
-name: "Bug Report"
+name: 'Bug Report'
 description: Create a report to help us improve
-title: "[BUG] "
+title: '[BUG] '
 labels: [bug]
 
 body:
@@ -25,16 +25,15 @@ body:
   - type: textarea
     id: bug-description
     attributes:
-      label: "Bug Description"
-      description: "A clear and concise description of what the bug is."
+      label: 'Bug Description'
+      description: 'A clear and concise description of what the bug is.'
     validations:
       required: true
   - type: textarea
     id: bug-reproduction
     attributes:
-      label: "Bug Reproduction"
-      description: 
-        A clear and concise description of how to reproduce the bug.
+      label: 'Bug Reproduction'
+      description: A clear and concise description of how to reproduce the bug.
 
         1. Go to '...'
         2. Click on '....'
@@ -45,14 +44,14 @@ body:
   - type: textarea
     id: bug-screenshots
     attributes:
-      label: "Bug Screenshots"
-      description: "If applicable, add screenshots to help explain your problem."
+      label: 'Bug Screenshots'
+      description: 'If applicable, add screenshots to help explain your problem.'
     validations:
       required: false
   - type: textarea
     id: bug-system-information
     attributes:
-      label: "Bug System Information"
+      label: 'Bug System Information'
       description: |
         If applicable, add information about your system configuration.
       value: |
@@ -60,4 +59,3 @@ body:
         - Browser: [e.g. Google Chrome, Firefox]
     validations:
       required: false
-

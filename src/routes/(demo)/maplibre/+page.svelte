@@ -16,7 +16,7 @@
 		type AddToOptions,
 		type Options,
 		type TimeType
-	} from '@watergis/maplibre-gl-sky';
+	} from '$lib';
 	import { clipboard, RangeSlider } from '@skeletonlabs/skeleton';
 	import {
 		Timeline,

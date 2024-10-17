@@ -1,6 +1,6 @@
-name: "New Feature Request"
-description: "Suggest an idea for this project"
-title: "[FEATURE] "
+name: 'New Feature Request'
+description: 'Suggest an idea for this project'
+title: '[FEATURE] '
 labels: [enhancement]
 
 body:
@@ -25,23 +25,23 @@ body:
   - type: textarea
     id: feature-description
     attributes:
-      label: "Feature Description"
-      description: "A clear and concise description of what the feature is."
+      label: 'Feature Description'
+      description: 'A clear and concise description of what the feature is.'
     validations:
       required: true
 
   - type: textarea
     id: feature-implementation
     attributes:
-      label: "Feature Implementation"
-      description: "A clear and concise description of how the feature should be implemented."
+      label: 'Feature Implementation'
+      description: 'A clear and concise description of how the feature should be implemented.'
     validations:
       required: false
 
   - type: textarea
     id: feature-alternatives
     attributes:
-      label: "Feature Alternatives"
+      label: 'Feature Alternatives'
       description: "A clear and concise description of any alternative solutions or features you've considered."
     validations:
       required: false

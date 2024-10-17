@@ -20,21 +20,9 @@ pnpm lefthook install
 
 ### Run locally
 
-- mapblire-gl-export
-
 ```shell
-cd packages/maplibre-gl-sky
 pnpm dev
 ```
-
-- mapbox-gl-export
-
-```shell
-cd packages/mapbox-gl-sky
-pnpm dev
-```
-
-Note. Most of common features are imported from `maplibre-gl-sky` plugin
 
 ### Build packages
 
