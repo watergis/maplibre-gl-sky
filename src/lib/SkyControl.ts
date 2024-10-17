@@ -1,6 +1,6 @@
-import { Map, SkySpecification } from 'maplibre-gl';
+import { Map, type SkySpecification } from 'maplibre-gl';
 import SunCalc from 'suncalc';
-import { AddToOptions, AvailableTimeTypes, Options, TimeType } from './interfaces';
+import { type AddToOptions, AvailableTimeTypes, type Options, type TimeType } from './interfaces';
 import { defaultSkyOptions } from './constants';
 import dayjs, { Dayjs } from 'dayjs';
 import utc from 'dayjs/plugin/utc';

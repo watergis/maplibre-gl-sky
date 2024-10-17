@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 env:
   CI: true
@@ -37,8 +37,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: build packages
-        run: |
-          pnpm --filter="./packages/**" build
+        run: pnpm build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets

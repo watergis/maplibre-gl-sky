@@ -1,11 +1,11 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Build
+name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
 
 env:
@@ -14,24 +14,23 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [20]
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: pnpm/action-setup@v4.0.0
-    - name: Setup Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: pnpm
-    - name: install dependencies
-      run: pnpm install --frozen-lockfile
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4.0.0
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+      - name: install dependencies
+        run: pnpm install --frozen-lockfile
 
-    - run: pnpm lint
+      - run: pnpm lint
 
-    - name: build
-      run: pnpm build
+      - name: build
+        run: pnpm build

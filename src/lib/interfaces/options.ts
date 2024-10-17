@@ -1,4 +1,4 @@
-import { SkySpecification } from 'maplibre-gl';
+import type { SkySpecification } from 'maplibre-gl';
 
 /**
  * SkyControl options

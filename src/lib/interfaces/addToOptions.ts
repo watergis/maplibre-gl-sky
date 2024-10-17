@@ -1,4 +1,4 @@
-import { TimeType } from './timeTypes';
+import type { TimeType } from './timeTypes';
 
 /**
  * Options for AddTo method
