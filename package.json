@@ -1,7 +1,7 @@
 {
 	"name": "@watergis/maplibre-gl-sky",
 	"description": "This repository is to add sky color to maplibre-gl-js smartly",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"exports": {
 		".": {
 			"import": "./dist/maplibre-gl-sky.es.js",
