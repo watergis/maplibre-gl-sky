@@ -72,7 +72,7 @@ importers:
         version: 2.10.2(svelte@4.2.19)
       '@skeletonlabs/tw-plugin':
         specifier: 0.4.0
-        version: 0.4.0(tailwindcss@3.4.10)
+        version: 0.4.0(tailwindcss@3.4.14)
       '@sveltejs/adapter-auto':
         specifier: ^3.2.4
         version: 3.2.4(@sveltejs/kit@2.5.24(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8)))(svelte@4.2.19)(vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8)))
@@ -84,10 +84,10 @@ importers:
         version: 3.1.2(svelte@4.2.19)(vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8))
       '@tailwindcss/forms':
         specifier: 0.5.7
-        version: 0.5.7(tailwindcss@3.4.10)
+        version: 0.5.7(tailwindcss@3.4.14)
       '@tailwindcss/typography':
         specifier: 0.5.14
-        version: 0.5.14(tailwindcss@3.4.10)
+        version: 0.5.14(tailwindcss@3.4.14)
       '@types/eslint':
         specifier: ^9.6.0
         version: 9.6.0
@@ -99,7 +99,7 @@ importers:
         version: 3.0.1(svelte@4.2.19)
       '@watergis/maplibre-gl-sky':
         specifier: workspace:^
-        version: link:../../packages/maplibre-gl-sky
+        version: link:../..
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.41)
@@ -140,8 +140,8 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(svelte@4.2.19)
       tailwindcss:
-        specifier: 3.4.10
-        version: 3.4.10
+        specifier: 3.4.14
+        version: 3.4.14
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -153,7 +153,7 @@ importers:
         version: 5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8)
       vite-plugin-tailwind-purgecss:
         specifier: 0.3.3
-        version: 0.3.3(tailwindcss@3.4.10)(vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8))
+        version: 0.3.3(tailwindcss@3.4.14)(vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8))
 
 packages:
 
@@ -2498,8 +2498,8 @@ packages:
     resolution: {integrity: sha512-IY1rnGr6izd10B0A8LqsBfmlT5OILVuZ7XsI0vdGPEvuonFV7NYEUK4dAkm9Zg2q0Um92kYjTpS1CAP3Nh/KWw==}
     engines: {node: '>=16'}
 
-  tailwindcss@3.4.10:
-    resolution: {integrity: sha512-KWZkVPm7yJRhdu4SRSl9d4AK2wM3a50UsvgHZO7xY77NQr2V+fIrEuoDGQcbvswWvFGbS2f6e+jC/6WJm1Dl0w==}
+  tailwindcss@3.4.14:
+    resolution: {integrity: sha512-IcSvOcTRcUtQQ7ILQL5quRDg7Xs93PdJEk1ZLbhhvJc7uj/OAhYOnruEiwnGgBvUtaUAJ8/mhSw1o8L2jCiENA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -3153,9 +3153,9 @@ snapshots:
       esm-env: 1.0.0
       svelte: 4.2.19
 
-  '@skeletonlabs/tw-plugin@0.4.0(tailwindcss@3.4.10)':
+  '@skeletonlabs/tw-plugin@0.4.0(tailwindcss@3.4.14)':
     dependencies:
-      tailwindcss: 3.4.10
+      tailwindcss: 3.4.14
 
   '@sveltejs/adapter-auto@3.2.4(@sveltejs/kit@2.5.24(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8)))(svelte@4.2.19)(vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8)))':
     dependencies:
@@ -3203,18 +3203,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.10)':
+  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.14)':
     dependencies:
       mini-svg-data-uri: 1.4.4
-      tailwindcss: 3.4.10
+      tailwindcss: 3.4.14
 
-  '@tailwindcss/typography@0.5.14(tailwindcss@3.4.10)':
+  '@tailwindcss/typography@0.5.14(tailwindcss@3.4.14)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.10
+      tailwindcss: 3.4.14
 
   '@types/cookie@0.6.0': {}
 
@@ -5171,7 +5171,7 @@ snapshots:
       magic-string: 0.30.11
       periscopic: 3.1.0
 
-  tailwindcss@3.4.10:
+  tailwindcss@3.4.14:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -5329,14 +5329,14 @@ snapshots:
 
   varint@6.0.0: {}
 
-  vite-plugin-tailwind-purgecss@0.3.3(tailwindcss@3.4.10)(vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8)):
+  vite-plugin-tailwind-purgecss@0.3.3(tailwindcss@3.4.14)(vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8)):
     dependencies:
       chalk: 5.3.0
       css-tree: 2.3.1
       fast-glob: 3.3.2
       purgecss: 6.0.0
       purgecss-from-html: 6.0.0
-      tailwindcss: 3.4.10
+      tailwindcss: 3.4.14
       vite: 5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8)
 
   vite@5.4.2(@types/node@22.5.0)(sass-embedded@1.77.8):
