@@ -7,7 +7,7 @@
 
 This repository is to add sky color to maplibre-gl-js smartly
 
-![plugin-image](./sites/demo/static/assets/plugin-overview.webp)
+![plugin-image](./static/assets/plugin-overview.webp)
 
 ## Installation
 
