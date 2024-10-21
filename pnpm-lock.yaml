@@ -31,7 +31,7 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5(@sveltejs/kit@2.7.2(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.3)(vite@5.4.9(@types/node@22.7.7)(sass-embedded@1.80.3)))(svelte@5.0.3)(vite@5.4.9(@types/node@22.7.7)(sass-embedded@1.80.3)))
       '@sveltejs/kit':
-        specifier: ^2.7.1
+        specifier: ^2.7.2
         version: 2.7.2(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.3)(vite@5.4.9(@types/node@22.7.7)(sass-embedded@1.80.3)))(svelte@5.0.3)(vite@5.4.9(@types/node@22.7.7)(sass-embedded@1.80.3))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^4.0.0
@@ -61,13 +61,13 @@ importers:
         specifier: ^1.11.13
         version: 1.11.13
       eslint:
-        specifier: ^9.12.0
+        specifier: ^9.13.0
         version: 9.13.0(jiti@1.21.6)
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@9.13.0(jiti@1.21.6))
       eslint-plugin-svelte:
-        specifier: ^2.45.1
+        specifier: ^2.46.0
         version: 2.46.0(eslint@9.13.0(jiti@1.21.6))(svelte@5.0.3)
       globals:
         specifier: ^15.11.0
@@ -76,7 +76,7 @@ importers:
         specifier: 11.10.0
         version: 11.10.0
       lefthook:
-        specifier: ^1.7.21
+        specifier: ^1.7.22
         version: 1.7.22
       postcss:
         specifier: 8.4.47
@@ -88,10 +88,10 @@ importers:
         specifier: ^3.2.7
         version: 3.2.7(prettier@3.3.3)(svelte@5.0.3)
       sass-embedded:
-        specifier: ^1.80.2
+        specifier: ^1.80.3
         version: 1.80.3
       svelte:
-        specifier: ^5.0.0
+        specifier: ^5.0.3
         version: 5.0.3
       svelte-check:
         specifier: ^4.0.5
