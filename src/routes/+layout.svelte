@@ -3,7 +3,12 @@
 	import '../app.postcss';
 	import { page } from '$app/stores';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+		children?: import('svelte').Snippet;
+	}
+
+	let { data, children }: Props = $props();
 </script>
 
 <svelte:head>
@@ -23,4 +28,4 @@
 	<meta property="og:url" content={$page.url.href} />
 </svelte:head>
 
-<slot />
+{@render children?.()}

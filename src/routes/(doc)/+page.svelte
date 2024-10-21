@@ -6,12 +6,12 @@
 		{ label: 'NPM', value: 'npm' },
 		{ label: 'CDN', value: 'cdn' }
 	];
-	let importTypeTabSet: string = imprtTypeTabs[0].value;
+	let importTypeTabSet: string = $state(imprtTypeTabs[0].value);
 
-	let packageManager = 'npm';
+	let packageManager = $state('npm');
 
-	let maplibreSkyVersion = 'latest';
-	let maplibreCdnExample = '';
+	let maplibreSkyVersion = $state('latest');
+	let maplibreCdnExample = $state('');
 
 	const getMaplibreSkyVersion = async () => {
 		const res = await fetch('https://registry.npmjs.org/@watergis/maplibre-gl-sky/latest');
