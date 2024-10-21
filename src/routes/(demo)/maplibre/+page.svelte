@@ -29,19 +29,23 @@
 	} from 'svelte-vertical-timeline';
 	import CenterIconManager from '@watergis/maplibre-center-icon';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	let map: Map;
-	let activeTime: TimeType | 'auto' = 'auto';
+	let activeTime: TimeType | 'auto' = $state('auto');
 	const defaultOptions: Options = defaultSkyOptions;
-	let activeSkySpec: SkySpecification;
+	let activeSkySpec: SkySpecification | undefined = $state();
 
 	let suncalcTimes: {
 		type: TimeType;
 		date: Date;
-	}[] = [];
-	let bestTime: TimeType;
-	let currentDate: Date;
+	}[] = $state([]);
+	let bestTime: TimeType | undefined = $state();
+	let currentDate: Date | undefined = $state();
 
 	let sky: SkyControl;
 
@@ -115,12 +119,13 @@
 	const handleSkyParamChanged = () => {
 		if (activeTime === 'auto') return;
 		if (!defaultSkyOptions.skyOptions) return;
+		if (!activeSkySpec) return;
 		defaultSkyOptions.skyOptions[activeTime] = activeSkySpec;
 		initSky(activeTime);
 	};
 </script>
 
-<div id="map" />
+<div id="map"></div>
 
 {#if activeTime !== 'auto'}
 	{#if activeSkySpec}
@@ -136,7 +141,7 @@
 					rows="8"
 					readonly
 					value={JSON.stringify(activeSkySpec, null, 4)}
-				/>
+				></textarea>
 			</label>
 		</div>
 	{/if}
@@ -144,13 +149,14 @@
 
 {#if bestTime && suncalcTimes?.length > 0}
 	<div class="suncalc-overlay p-2">
-		<p class="text-black text-right my-2">Current time: {currentDate.toISOString()}</p>
+		<p class="text-black text-right my-2">Current time: {currentDate?.toISOString()}</p>
 		<Timeline position="left">
 			{#each suncalcTimes as time}
 				{@const color =
 					time.type.toLowerCase() === bestTime.toLowerCase() ? 'rgb(255,0,0)' : 'rgb(0,0,0)'}
 
 				<TimelineItem>
+					<!-- @migration-task: migrate this slot by hand, `opposite-content` is an invalid identifier -->
 					<TimelineOppositeContent slot="opposite-content">
 						<p style="color: {color};">{time.date.toISOString()}</p>
 					</TimelineOppositeContent>
@@ -170,7 +176,7 @@
 <div class="control-overlay p-2 gap-0.5">
 	<label class="label">
 		<span class="font-bold text-black">Time type</span>
-		<select class="select" bind:value={activeTime} on:change={handleTimeTypeChanged}>
+		<select class="select" bind:value={activeTime} onchange={handleTimeTypeChanged}>
 			<option value={'auto'}>Auto</option>
 			{#each AvailableTimeTypes as type}
 				<option value={type}>{type}</option>
@@ -186,7 +192,7 @@
 						class="input"
 						type="color"
 						bind:value={activeSkySpec['sky-color']}
-						on:change={handleSkyParamChanged}
+						onchange={handleSkyParamChanged}
 					/>
 					<input
 						class="input"
@@ -219,7 +225,7 @@
 						class="input"
 						type="color"
 						bind:value={activeSkySpec['horizon-color']}
-						on:change={handleSkyParamChanged}
+						onchange={handleSkyParamChanged}
 					/>
 					<input
 						class="input"
@@ -252,7 +258,7 @@
 						class="input"
 						type="color"
 						bind:value={activeSkySpec['fog-color']}
-						on:change={handleSkyParamChanged}
+						onchange={handleSkyParamChanged}
 					/>
 					<input
 						class="input"
