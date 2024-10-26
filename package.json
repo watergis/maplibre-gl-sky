@@ -44,7 +44,7 @@
 	"devDependencies": {
 		"@changesets/cli": "^2.27.9",
 		"@floating-ui/dom": "1.6.11",
-		"@skeletonlabs/skeleton": "2.10.2",
+		"@skeletonlabs/skeleton": "2.10.3",
 		"@skeletonlabs/tw-plugin": "0.4.0",
 		"@sveltejs/adapter-auto": "^3.2.5",
 		"@sveltejs/kit": "^2.7.2",
