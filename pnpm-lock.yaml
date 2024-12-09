@@ -97,8 +97,8 @@ importers:
         specifier: ^4.0.5
         version: 4.1.1(svelte@5.9.0)(typescript@5.7.2)
       svelte-vertical-timeline:
-        specifier: ^1.0.2
-        version: 1.0.2(svelte@5.9.0)
+        specifier: ^2.0.0
+        version: 2.0.0(svelte@5.9.0)
       tailwindcss:
         specifier: 3.4.16
         version: 3.4.16
@@ -1984,10 +1984,10 @@ packages:
       svelte:
         optional: true
 
-  svelte-vertical-timeline@1.0.2:
-    resolution: {integrity: sha512-PAB+qBrSrNp5/saLXwIJ9r9dljdbiDB8ymc7c6ieIdbbP+71j7N+qUdZP1In+KXUbyXMpsG2I13KCgLalf6kOA==}
+  svelte-vertical-timeline@2.0.0:
+    resolution: {integrity: sha512-I2Lb+J23mhG8Vf4dLi/qXEo3hVBG2+xilCXpGazMPze8Dhdwad0W+EqxRDvXmlkEdF5HdI+nizO5bNVRe+IgYA==}
     peerDependencies:
-      svelte: ^4.2.16
+      svelte: ^5.0.0
 
   svelte@5.9.0:
     resolution: {integrity: sha512-ZcC3BtjIDa4yfhAyAr94MxDQLD97zbpXmaUldFv2F5AkdZwYgQYB3BZVNRU5zEVaeeHoAns8ADiRMnre3QmpxQ==}
@@ -3980,7 +3980,7 @@ snapshots:
     optionalDependencies:
       svelte: 5.9.0
 
-  svelte-vertical-timeline@1.0.2(svelte@5.9.0):
+  svelte-vertical-timeline@2.0.0(svelte@5.9.0):
     dependencies:
       svelte: 5.9.0
 
