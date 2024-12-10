@@ -1,5 +1,11 @@
 # @watergis/maplibre-gl-sky
 
+## 0.0.9
+
+### Patch Changes
+
+- a167ece: chore: updated dependencies
+
 ## 0.0.8
 
 ### Patch Changes
