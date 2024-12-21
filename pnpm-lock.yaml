@@ -22,8 +22,8 @@ importers:
         specifier: 1.6.12
         version: 1.6.12
       '@skeletonlabs/skeleton':
-        specifier: 2.10.3
-        version: 2.10.3(svelte@5.14.0)
+        specifier: 2.10.4
+        version: 2.10.4(svelte@5.14.0)
       '@skeletonlabs/tw-plugin':
         specifier: 0.4.0
         version: 0.4.0(tailwindcss@3.4.17)
@@ -564,8 +564,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@skeletonlabs/skeleton@2.10.3':
-    resolution: {integrity: sha512-O1RecF68zEVvZl3GgRS4emqWMUIQLHvTOFoqGOw/2OXCPE06IxUQrHQf2hnxCPxtGZNXY2YX8UNV38l+eH8GNQ==}
+  '@skeletonlabs/skeleton@2.10.4':
+    resolution: {integrity: sha512-jlelxAK9vycpM9E9Y31N/lX7hLDMOEQqKoo75MmFQJbc0gxpYRv5hGO0MCxaoLco+TpH/xi/yCSNlflts24e6A==}
     peerDependencies:
       svelte: ^3.56.0 || ^4.0.0 || ^5.0.0
 
@@ -2610,7 +2610,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.28.1':
     optional: true
 
-  '@skeletonlabs/skeleton@2.10.3(svelte@5.14.0)':
+  '@skeletonlabs/skeleton@2.10.4(svelte@5.14.0)':
     dependencies:
       esm-env: 1.0.0
       svelte: 5.14.0
