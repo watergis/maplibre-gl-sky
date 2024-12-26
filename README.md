@@ -2,7 +2,6 @@
 
 ![License](https://img.shields.io/github/license/watergis/maplibre-gl-sky)
 [![CI](https://github.com/watergis/maplibre-gl-sky/actions/workflows/ci.yml/badge.svg)](https://github.com/watergis/maplibre-gl-sky/actions/workflows/ci.yml)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d8d3c213-ee53-442b-b644-c2624c8f8062/deploy-status)](https://app.netlify.com/sites/maplibre-gl-sky/deploys)
 ![GitHub repo size](https://img.shields.io/github/repo-size/watergis/maplibre-gl-sky)
 
 This repository is to add sky color to maplibre-gl-js smartly
