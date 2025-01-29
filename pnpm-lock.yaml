@@ -25,8 +25,8 @@ importers:
         specifier: 2.11.0
         version: 2.11.0(svelte@5.19.3)
       '@skeletonlabs/tw-plugin':
-        specifier: 0.4.0
-        version: 0.4.0(tailwindcss@3.4.17)
+        specifier: 0.4.1
+        version: 0.4.1(tailwindcss@3.4.17)
       '@sveltejs/adapter-auto':
         specifier: ^3.3.1
         version: 3.3.1(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.19.3)(vite@6.0.11(@types/node@22.10.10)(jiti@1.21.7)(sass-embedded@1.83.4)(yaml@2.7.0)))(svelte@5.19.3)(vite@6.0.11(@types/node@22.10.10)(jiti@1.21.7)(sass-embedded@1.83.4)(yaml@2.7.0)))
@@ -575,8 +575,8 @@ packages:
     peerDependencies:
       svelte: ^3.56.0 || ^4.0.0 || ^5.0.0
 
-  '@skeletonlabs/tw-plugin@0.4.0':
-    resolution: {integrity: sha512-v6Y4deBq9ByRx3kTRGgekhhYkWEYgNNNu8UXOwJngCStB7w8SwmbNFSeHkluxMbgCgMnJyp220EMpw9nj/rEsQ==}
+  '@skeletonlabs/tw-plugin@0.4.1':
+    resolution: {integrity: sha512-crrC8BGKis0GNTp7V2HF6mk1ECLUvAxgTTV26LMgt/rV3U6Xd7N7dL5qIL8fE4MTHvpKa1SBsdqsnMbEvATeEg==}
     peerDependencies:
       tailwindcss: '>=3.0.0'
 
@@ -2621,7 +2621,7 @@ snapshots:
       esm-env: 1.0.0
       svelte: 5.19.3
 
-  '@skeletonlabs/tw-plugin@0.4.0(tailwindcss@3.4.17)':
+  '@skeletonlabs/tw-plugin@0.4.1(tailwindcss@3.4.17)':
     dependencies:
       tailwindcss: 3.4.17
 
