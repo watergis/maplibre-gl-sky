@@ -46,7 +46,7 @@
 		"@floating-ui/dom": "1.6.13",
 		"@skeletonlabs/skeleton": "2.11.0",
 		"@skeletonlabs/tw-plugin": "0.4.0",
-		"@sveltejs/adapter-auto": "^3.3.1",
+		"@sveltejs/adapter-auto": "^4.0.0",
 		"@sveltejs/kit": "^2.9.1",
 		"@sveltejs/vite-plugin-svelte": "^5.0.1",
 		"@tailwindcss/forms": "0.5.9",
