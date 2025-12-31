@@ -60,7 +60,7 @@
 		"eslint": "^9.16.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.46.1",
-		"globals": "^15.13.0",
+		"globals": "^16.0.0",
 		"highlight.js": "11.11.1",
 		"lefthook": "^1.9.0",
 		"maplibre-gl": "^4.7.1",
