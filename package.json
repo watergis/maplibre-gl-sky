@@ -55,7 +55,7 @@
 		"@types/node": "22.19.3",
 		"@types/suncalc": "^1.9.2",
 		"@watergis/maplibre-center-icon": "^3.0.1",
-		"autoprefixer": "10.4.22",
+		"autoprefixer": "10.4.23",
 		"dayjs": "^1.11.13",
 		"eslint": "^9.16.0",
 		"eslint-config-prettier": "^9.1.0",
